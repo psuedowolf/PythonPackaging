@@ -4,6 +4,7 @@ There are many ways to package python modules, where setuptools modules is requi
 
 
 The following is the basic content of setup.py:
+
     from setuptools import setup
     setup(name='PythonPackaging',
           version='0.1',
@@ -26,14 +27,17 @@ Run:
 Python setup.py bdist_egg sdist bdist 
 
 This generates following under the dist/ folder
+
   PythonPackaging-0.1.linux-i686.tar.gz  
   PythonPackaging-0.1-py2.7.egg  
   PythonPackaging-0.1.tar.gz
   
 To intall the sdist/bdist run
+
   pip install PythonPackaging-0.1.linux-i686.tar.gz /PythonPackaging-0.1.tar.gz
   
 To install egg file run
+
   easy_install PythonPackaging-0.1-py2.7.egg
   
 All the installed files get copied to /usr/local/lib/python2.7/site-packages depends on the location of
