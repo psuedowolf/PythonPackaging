@@ -2,7 +2,6 @@ This module teaches how to package python files into egg, source & binary distri
 
 There are many ways to package python modules, where setuptools modules is required to do this.
 
-
 The following is the basic content of setup.py:
 
     from setuptools import setup
@@ -12,7 +11,7 @@ The following is the basic content of setup.py:
           url='https://github.com/smruthiEJ/PythonPackaging',
           author='Smruthi Elapavuluri',
           author_email='jsmruthi@gmail.com',
-        #  install_requires=['any packages that are pre-reqs for this package to get installed'] 
+        # install_requires=['any packages that are pre-reqs for this package to get installed'] 
           license='OpenSource',
           packages=['date'],
           scripts=['hello.py'], zip_safe=True)
