@@ -3,6 +3,55 @@ This module teaches how to package python files into egg, source & binary distri
 There are many ways to package python modules, where setuptools modules is required to do this.
 
 
-The following is the basic content of setup.py: 
+The following is the basic content of setup.py:
+    from setuptools import setup
+    setup(name='PythonPackaging',
+          version='0.1',
+          description='Sample Python package',
+          url='https://github.com/smruthiEJ/PythonPackaging',
+          author='Smruthi Elapavuluri',
+          author_email='jsmruthi@gmail.com',
+        #  install_requires=['any packages that are pre-reqs for this package to get installed'] 
+          license='OpenSource',
+          packages=['date'],
+          scripts=['hello.py'], zip_safe=True)
+         
+zip_safe= True --> will not unzip the egg file once installed. 
+packages=['date'] --> includes the python modules that have .py files and which are to be packaged.
 
+Building packages: 
+
+Run:
+
+Python setup.py bdist_egg sdist bdist 
+
+This generates following under the dist/ folder
+  PythonPackaging-0.1.linux-i686.tar.gz  
+  PythonPackaging-0.1-py2.7.egg  
+  PythonPackaging-0.1.tar.gz
   
+To intall the sdist/bdist run
+  pip install PythonPackaging-0.1.linux-i686.tar.gz /PythonPackaging-0.1.tar.gz
+  
+To install egg file run
+  easy_install PythonPackaging-0.1-py2.7.egg
+  
+All the installed files get copied to /usr/local/lib/python2.7/site-packages depends on the location of
+in your system. 
+
+You can quickly check that using the following:
+<neon>$python
+>>> import site; site.getsitepackages()
+[list of locations for site-packages.]
+
+
+To see what other options setup.py provides, one can simply try the help command. 
+  python setup.py --help
+  python setup.py --help-commands
+  
+  Simplified: 
+  
+   python setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+   or: setup.py --help [cmd1 cmd2 ...]
+   or: setup.py --help-commands
+   or: setup.py cmd --help
