@@ -58,3 +58,7 @@ To see what other options setup.py provides, one can simply try the help command
    or: setup.py --help [cmd1 cmd2 ...]
    or: setup.py --help-commands
    or: setup.py cmd --help
+   
+   Additional Links
+   
+   https://docs.python.org/2/distutils/setupscript.html#installing-additional-files
